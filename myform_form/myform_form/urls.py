@@ -19,8 +19,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('signup10_affichage/', views.signup10_affichage, name="signup10_affichage"),
-    path('signup20_widget/', views.signup20_widget, name="signup20_widget"),
-    path('signup30_data/', views.signup30_data, name="signup30_data"),
+    path("admin/", admin.site.urls),
+    path("signup10_affichage/", views.signup10_affichage, name="signup10_affichage"),
+    path("signup20_widget/", views.signup20_widget, name="signup20_widget"),
+    path("signup30_data/", views.signup30_data, name="signup30_data"),
+    path("signup30_data/signup30_reussi/", views.signup30_reussi, name="signup30_reussi"),
 ]

@@ -1,3 +1,4 @@
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .forms import SignupForm, SignupFormWidget, SignupFormData
 
@@ -14,7 +15,16 @@ def signup20_widget(request):
 
 
 def signup30_data(request):
-    form = SignupFormData()
     if request.method == "POST":
-        print(request.POST)
+        form = SignupFormData(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            return HttpResponseRedirect("signup30_reussi/")
+    else:
+        form = SignupFormData()
+
     return render(request, "myform_form/signup30_data.html", context={"form": form})
+
+
+def signup30_reussi(request):
+    return render(request, "myform_form/signup30_reussi.html")
