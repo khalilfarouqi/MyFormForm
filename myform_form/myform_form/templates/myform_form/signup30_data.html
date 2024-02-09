@@ -6,11 +6,17 @@
 </head>
 <body>
     <form method="POST">
-        {% csrt_token %}
+        {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <input type="submit" value="S'inscrire">
+        <!--<input type="hidden" name="csrfmiddlewaretoken" value="1DSKm2krEu2iTs6G1mILZfnsKfmaMAvoq@0pa101dKbMnTG0TFM01JKoEMtQbg2">
+        <table>
+            <tr>
+                <th><label for="id_pseudo">Pseudo:</label></th>
+            </tr>
+        </table>-->
     </form>
 </body>
 </html>
