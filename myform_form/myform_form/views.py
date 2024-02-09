@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
 from .forms import SignupForm, SignupFormWidget, SignupFormData
 
 
@@ -19,7 +21,7 @@ def signup30_data(request):
         form = SignupFormData(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            return HttpResponseRedirect("signup30_reussi/")
+            return redirect(reverse("signup30_reussi"))
     else:
         form = SignupFormData()
 
