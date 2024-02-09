@@ -21,4 +21,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup10_affichage/', views.signup10_affichage, name="signup10_affichage"),
+    path('signup20_widget/', views.signup20_widget, name="signup20_widget"),
 ]
