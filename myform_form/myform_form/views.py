@@ -30,3 +30,18 @@ def signup30_data(request):
 
 def signup30_reussi(request):
     return render(request, "myform_form/signup30_reussi.html")
+
+
+def signup31_data(request):
+    form = SignupFormData()
+    return render(request, "myform_form/signup31_data.html", context={"form": form})
+
+
+def signup31_affichage(request):
+    form = SignupFormData(request.POST)
+    if form.is_valid():
+        cd = form.cleaned_data
+        print(cd)
+        return render(request, 'myform_form/signup31_affichage.html', {"cd": cd})
+    else:
+        return HttpResponse("'Les données ne sont pas valides")
